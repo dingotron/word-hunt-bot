@@ -30,12 +30,12 @@ def dfs(board, path, dict_trie, valid_words):
     starting from the given path """
 
     current_word = ''.join(board[i][j] for i, j in path)
-
-    if not dict_trie.has_subtrie(current_word):
-        return
     
     if dict_trie.has_key(current_word):
         valid_words.add(current_word)
+
+    if not dict_trie.has_subtrie(current_word):
+        return
 
     i, j = path[-1]
     for di in [-1, 0, 1]:
