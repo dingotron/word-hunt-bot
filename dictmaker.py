@@ -19,3 +19,7 @@ def create_dict_trie():
 
     with open('dict_trie.pkl', 'wb') as f:
         pickle.dump(trie, f)
+
+if __name__ == '__main__':
+    create_dict_trie()
+    print("Dictionary trie created and saved to 'dict_trie.pkl'.")
