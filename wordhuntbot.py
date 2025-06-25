@@ -23,6 +23,7 @@ def main():
     print("Valid words found:")
     for word in sorted(valid_words, key=lambda x: (len(x), x)):
         print(word)
+    print(f"Total valid words: {len(valid_words)}")
 
 
 def dfs(board, path, dict_trie, valid_words):
@@ -31,7 +32,7 @@ def dfs(board, path, dict_trie, valid_words):
 
     current_word = ''.join(board[i][j] for i, j in path)
     
-    if dict_trie.has_key(current_word):
+    if len(current_word) > 2 and dict_trie.has_key(current_word):
         valid_words.add(current_word)
 
     if not dict_trie.has_subtrie(current_word):
