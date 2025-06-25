@@ -1,0 +1,3 @@
+"""
+creates the dictionary trie
+"""

@@ -1,0 +1,3 @@
+"""
+word hunt bot
+"""
