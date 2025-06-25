@@ -1,6 +1,7 @@
 import pickle
 import pygtrie
 
+
 def main():
     # testing plural words in the dictionary
     # load the dictionary trie
@@ -18,5 +19,7 @@ def main():
         
         if word == "QUIT":
             break
+
+
 if __name__ == "__main__":
     main()
