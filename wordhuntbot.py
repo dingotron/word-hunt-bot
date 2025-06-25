@@ -31,22 +31,20 @@ def dfs(board, path, dict_trie, valid_words):
 
     current_word = ''.join(board[i][j] for i, j in path)
 
-    if len(current_word) > 16:
-        return
     if not dict_trie.has_subtrie(current_word):
         return
     
     if dict_trie.has_key(current_word):
         valid_words.add(current_word)
 
-    for i, j in path:
-        for di in [-1, 0, 1]:
-            for dj in [-1, 0, 1]:
-                if di == 0 and dj == 0:
-                    continue
-                ni, nj = i + di, j + dj
-                if 0 <= ni < 4 and 0 <= nj < 4 and (ni, nj) not in path:
-                    dfs(board, path + [(ni, nj)], dict_trie, valid_words)
+    i, j = path[-1]
+    for di in [-1, 0, 1]:
+        for dj in [-1, 0, 1]:
+            if di == 0 and dj == 0:
+                continue
+            ni, nj = i + di, j + dj
+            if 0 <= ni < 4 and 0 <= nj < 4 and (ni, nj) not in path:
+                dfs(board, path + [(ni, nj)], dict_trie, valid_words)
 
 
 if __name__ == "__main__":
